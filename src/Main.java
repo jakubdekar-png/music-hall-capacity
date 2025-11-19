@@ -1,36 +1,29 @@
-import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // Creating sectors based on image data
+        // Sector(String name, int standingPlaces, int seatingPlaces, String
+        // colorOfSector)
+        Sector s1 = new Sector("F1", 150, 0, "Blue");
+        Sector s2 = new Sector("L1", 50, 80, "Red");
+        Sector s3 = new Sector("L2", 50, 80, "Red");
+        Sector s4 = new Sector("L3", 20, 40, "Red");
+        Sector s5 = new Sector("U1", 35, 95, "Yellow");
+        Sector s6 = new Sector("U2", 35, 95, "Yellow");
+        Sector s7 = new Sector("U3", 60, 70, "Yellow");
 
-        // Vytvoření sektorů podle údajů z obrázku
-        // Sector(String nazev, int mistaKStani, int mistaKSezeni, String barvaSektoru)
-        Sector s1 = new Sector("F1", 150, 0, "Modrá");
-        Sector s2 = new Sector("L1", 50, 80, "Červená");
-        Sector s3 = new Sector("L2", 50, 80, "Červená");
-        Sector s4 = new Sector("L3", 20, 40, "Červená");
-        Sector s5 = new Sector("U1", 35, 95, "Žlutá");
-        Sector s6 = new Sector("U2", 35, 95, "Žlutá");
-        Sector s7 = new Sector("U3", 60, 70, "Žlutá");
+        // Creating MusicHall
+        MusicHall hall = new MusicHall(s1, s2, s3, s4, s5, s6, s7);
 
-        // Vytvoření MusicHall
-        MusicHall hala = new MusicHall(s1, s2, s3, s4, s5, s6, s7);
+        // Printing info
+        hall.printInfo();
 
-        // Výpis informací
-        hala.vypisInfo();
+        // Testing capacity methods
+        System.out.println("\n--- Testing Capacities ---");
+        System.out.println("Total seating places: " + hall.getSumOfSeatingPlaces());
+        System.out.println("Total standing places: " + hall.getSumOfStandingPlaces());
 
-        // Testování metod pro součty
-        System.out.println("\n--- Testování kapacit ---");
-        System.out.println("Celkem míst k sezení: " + hala.getCelkemMistKSezeni());
-        System.out.println("Celkem míst k stání: " + hala.getCelkemMistKStani());
-        
-        System.out.println("Místa k sezení (Červená): " + hala.getCelkemMistKSezeni("Červená"));
-        System.out.println("Místa k stání (Modrá): " + hala.getCelkemMistKStani("Modrá"));
+        System.out.println("Seating places (Red): " + hall.getSumOfSeatingPlaces("Red"));
+        System.out.println("Standing places (Blue): " + hall.getSumOfStandingPlaces("Blue"));
     }
 }

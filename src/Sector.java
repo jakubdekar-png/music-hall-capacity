@@ -1,32 +1,32 @@
 public class Sector {
-    private int mistaKStani;
-    private int mistaKSezeni;
-    private String nazevSektoru;
-    private String barvaSektoru;
+    private String nameOfSector;
+    private int standingPlaces;
+    private int seatingPlaces;
+    private String colorOfSector;
 
-    public Sector(String nazev, int mistaKStani, int mistaKSezeni, String barvaSektoru) {
-        this.nazevSektoru = nazev;
-        this.mistaKStani = mistaKStani;
-        this.mistaKSezeni = mistaKSezeni;
-        this.barvaSektoru = barvaSektoru;
+    public Sector(String name, int standingPlaces, int seatingPlaces, String colorOfSector) {
+        this.nameOfSector = name;
+        this.standingPlaces = standingPlaces;
+        this.seatingPlaces = seatingPlaces;
+        this.colorOfSector = colorOfSector;
     }
 
-    public int getMistaKStani() {
-        return mistaKStani;
+    public int getStandingPlaces() {
+        return standingPlaces;
     }
 
-    public int getMistaKSezeni() {
-        return mistaKSezeni;
+    public int getSeatingPlaces() {
+        return seatingPlaces;
     }
 
-    public String getBarva() {
-        return barvaSektoru;
+    public String getColor() {
+        return colorOfSector;
     }
 
-    public void vypisInfo() {
-        System.out.println("Sektor: " + nazevSektoru);
-        System.out.println("  Barva: " + barvaSektoru);
-        System.out.println("  Místa k stání: " + mistaKStani);
-        System.out.println("  Místa k sezení: " + mistaKSezeni);
+    public void printInfo() {
+        System.out.println("Sector: " + nameOfSector);
+        System.out.println("  Color: " + colorOfSector);
+        System.out.println("  Standing places: " + standingPlaces);
+        System.out.println("  Seating places: " + seatingPlaces);
     }
 }

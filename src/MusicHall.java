@@ -1,58 +1,84 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class MusicHall {
-    private List<Sector> sektory;
+    private Sector sector1;
+    private Sector sector2;
+    private Sector sector3;
+    private Sector sector4;
+    private Sector sector5;
+    private Sector sector6;
+    private Sector sector7;
 
-    public MusicHall(Sector... sektory) {
-        this.sektory = new ArrayList<>(Arrays.asList(sektory));
+    public MusicHall(Sector s1, Sector s2, Sector s3, Sector s4, Sector s5, Sector s6, Sector s7) {
+        this.sector1 = s1;
+        this.sector2 = s2;
+        this.sector3 = s3;
+        this.sector4 = s4;
+        this.sector5 = s5;
+        this.sector6 = s6;
+        this.sector7 = s7;
     }
 
-    public int getCelkemMistKSezeni() {
-        int celkem = 0;
-        for (Sector s : sektory) {
-            celkem += s.getMistaKSezeni();
-        }
-        return celkem;
+    public int getSumOfSeatingPlaces() {
+        return sector1.getSeatingPlaces() + sector2.getSeatingPlaces() + sector3.getSeatingPlaces() +
+                sector4.getSeatingPlaces() + sector5.getSeatingPlaces() + sector6.getSeatingPlaces() +
+                sector7.getSeatingPlaces();
     }
 
-    public int getCelkemMistKSezeni(String pouzeProBarvu) {
-        int soucet = 0;
-        for (Sector s : sektory) {
-            if (s.getBarva().equals(pouzeProBarvu)) {
-                soucet += s.getMistaKSezeni();
-            }
-        }
-        return soucet;
+    public int getSumOfSeatingPlaces(String onlyForColor) {
+        int sum = 0;
+        if (sector1.getColor().equals(onlyForColor))
+            sum += sector1.getSeatingPlaces();
+        if (sector2.getColor().equals(onlyForColor))
+            sum += sector2.getSeatingPlaces();
+        if (sector3.getColor().equals(onlyForColor))
+            sum += sector3.getSeatingPlaces();
+        if (sector4.getColor().equals(onlyForColor))
+            sum += sector4.getSeatingPlaces();
+        if (sector5.getColor().equals(onlyForColor))
+            sum += sector5.getSeatingPlaces();
+        if (sector6.getColor().equals(onlyForColor))
+            sum += sector6.getSeatingPlaces();
+        if (sector7.getColor().equals(onlyForColor))
+            sum += sector7.getSeatingPlaces();
+        return sum;
     }
 
-    public int getCelkemMistKStani() {
-        int celkem = 0;
-        for (Sector s : sektory) {
-            celkem += s.getMistaKStani();
-        }
-        return celkem;
+    public int getSumOfStandingPlaces() {
+        return sector1.getStandingPlaces() + sector2.getStandingPlaces() + sector3.getStandingPlaces() +
+                sector4.getStandingPlaces() + sector5.getStandingPlaces() + sector6.getStandingPlaces() +
+                sector7.getStandingPlaces();
     }
 
-    public int getCelkemMistKStani(String pouzeProBarvu) {
-        int soucet = 0;
-        for (Sector s : sektory) {
-            if (s.getBarva().equals(pouzeProBarvu)) {
-                soucet += s.getMistaKStani();
-            }
-        }
-        return soucet;
+    public int getSumOfStandingPlaces(String onlyForColor) {
+        int sum = 0;
+        if (sector1.getColor().equals(onlyForColor))
+            sum += sector1.getStandingPlaces();
+        if (sector2.getColor().equals(onlyForColor))
+            sum += sector2.getStandingPlaces();
+        if (sector3.getColor().equals(onlyForColor))
+            sum += sector3.getStandingPlaces();
+        if (sector4.getColor().equals(onlyForColor))
+            sum += sector4.getStandingPlaces();
+        if (sector5.getColor().equals(onlyForColor))
+            sum += sector5.getStandingPlaces();
+        if (sector6.getColor().equals(onlyForColor))
+            sum += sector6.getStandingPlaces();
+        if (sector7.getColor().equals(onlyForColor))
+            sum += sector7.getStandingPlaces();
+        return sum;
     }
 
-    public void vypisInfo() {
-        System.out.println("Informace o koncertním sále:");
+    public void printInfo() {
+        System.out.println("Music Hall Info:");
         System.out.println("----------------------------");
-        for (Sector s : sektory) {
-            s.vypisInfo();
-        }
+        sector1.printInfo();
+        sector2.printInfo();
+        sector3.printInfo();
+        sector4.printInfo();
+        sector5.printInfo();
+        sector6.printInfo();
+        sector7.printInfo();
         System.out.println("----------------------------");
-        System.out.println("Celková kapacita k sezení: " + getCelkemMistKSezeni());
-        System.out.println("Celková kapacita k stání: " + getCelkemMistKStani());
+        System.out.println("Total seating capacity: " + getSumOfSeatingPlaces());
+        System.out.println("Total standing capacity: " + getSumOfStandingPlaces());
     }
 }
