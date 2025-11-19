@@ -1,4 +1,3 @@
-
 public class Main {
     public static void main(String[] args) {
         // Creating sectors based on image data
@@ -19,11 +18,11 @@ public class Main {
         hall.printInfo();
 
         // Testing capacity methods
-        System.out.println("\n--- Testing Capacities ---");
-        System.out.println("Total seating places: " + hall.getSumOfSeatingPlaces());
-        System.out.println("Total standing places: " + hall.getSumOfStandingPlaces());
+        System.out.println("\n--- Testování kapacit ---");
+        System.out.println("Celkem míst k sezení: " + hall.getSumOfSeatingPlaces());
+        System.out.println("Celkem míst k stání: " + hall.getSumOfStandingPlaces());
 
-        System.out.println("Seating places (Red): " + hall.getSumOfSeatingPlaces("Red"));
-        System.out.println("Standing places (Blue): " + hall.getSumOfStandingPlaces("Blue"));
+        System.out.println("Místa k sezení (Červená): " + hall.getSumOfSeatingPlaces("Red"));
+        System.out.println("Místa k stání (Modrá): " + hall.getSumOfStandingPlaces("Blue"));
     }
 }

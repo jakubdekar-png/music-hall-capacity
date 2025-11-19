@@ -24,9 +24,9 @@ public class Sector {
     }
 
     public void printInfo() {
-        System.out.println("Sector: " + nameOfSector);
-        System.out.println("  Color: " + colorOfSector);
-        System.out.println("  Standing places: " + standingPlaces);
-        System.out.println("  Seating places: " + seatingPlaces);
+        System.out.println("Sektor: " + nameOfSector);
+        System.out.println("  Barva: " + colorOfSector);
+        System.out.println("  Místa k stání: " + standingPlaces);
+        System.out.println("  Místa k sezení: " + seatingPlaces);
     }
 }

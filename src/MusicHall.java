@@ -68,7 +68,7 @@ public class MusicHall {
     }
 
     public void printInfo() {
-        System.out.println("Music Hall Info:");
+        System.out.println("Informace o koncertním sále:");
         System.out.println("----------------------------");
         sector1.printInfo();
         sector2.printInfo();
@@ -78,7 +78,7 @@ public class MusicHall {
         sector6.printInfo();
         sector7.printInfo();
         System.out.println("----------------------------");
-        System.out.println("Total seating capacity: " + getSumOfSeatingPlaces());
-        System.out.println("Total standing capacity: " + getSumOfStandingPlaces());
+        System.out.println("Celková kapacita k sezení: " + getSumOfSeatingPlaces());
+        System.out.println("Celková kapacita k stání: " + getSumOfStandingPlaces());
     }
 }
