@@ -42,12 +42,10 @@ public class MusicHall {
     }
 
     public void printInfo() {
-        System.out.println("Informace o koncertnim sale:");
-        System.out.println("----------------------------");
+    System.out.println("Informace o koncertnim sale:");
         for (Sector sector : sectors) {
             sector.printInfo();
         }
-        System.out.println("----------------------------");
         System.out.println("Celkova kapacita k sezeni: " + getSumOfSeatingPlaces());
         System.out.println("Celkova kapacita k stani: " + getSumOfStandingPlaces());
     }

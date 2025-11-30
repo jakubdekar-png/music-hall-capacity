@@ -11,12 +11,5 @@ public class Main {
         MusicHall hall = new MusicHall(s1, s2, s3, s4, s5, s6, s7);
 
         hall.printInfo();
-
-        System.out.println("\n--- Testovani kapacit ---");
-        System.out.println("Celkem mist k sezeni: " + hall.getSumOfSeatingPlaces());
-        System.out.println("Celkem mist k stani: " + hall.getSumOfStandingPlaces());
-
-        System.out.println("Mista k sezeni (Cervena): " + hall.getSumOfSeatingPlaces("Red"));
-        System.out.println("Mista k stani (Modra): " + hall.getSumOfStandingPlaces("Blue"));
     }
 }
